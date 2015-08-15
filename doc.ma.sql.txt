@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS `docma_users` (  
+  `username` varchar(150) NOT NULL,  
+  `password` varchar(225) NOT NULL,
+  `userrole` int(11) NOT NULL default '0',
+  `usergroup` varchar(50) NOT NULL,
+  `userstatus` varchar(50) NOT NULL,
+  `validationtoken` varchar(150) NOT NULL,
+  `lastaccess` varchar(150) NOT NULL,  
+  `key` int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `docma_levels` (  
+  `username` varchar(150) NOT NULL,  
+  `userlevels` int(32) NOT NULL default '0',
+  `key` int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `docma_auth` (  
+ `username` varchar(150) NOT NULL,  
+ `userauth` int(32) NOT NULL default '0',
+ `key` int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `docma_log` (  
+ `username` varchar(150) NOT NULL,  
+ `userauth` int(32) NOT NULL default '0',
+ `key` int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+INSERT INTO docma_users (username, password, userstatus, 
+validationtoken, usergroup, userrole, lastaccess) 
+VALUES ('admin@doc.ma', '81dc9bdb52d04dc20036dbd8313ed055', '2', 'eb44a08ecd59f5afdc8ba2cebecdfab1', 'vsum-admin', 0, '13/08/2015-15:16:17')
